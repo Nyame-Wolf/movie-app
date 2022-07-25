@@ -9,7 +9,7 @@ body {
   color: #f5f5f5;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background: url(./assets/background.jpg) no-repeat center center / cover;
+  background: url(./assets/background.jpg) no-repeat center center / cover;
 }
 
 :root {
@@ -33,7 +33,6 @@ nav {
   align-items: center;
   justify-content: space-around;
 }
-
 
 .search-form {
   margin: auto;
@@ -80,7 +79,7 @@ nav {
   font-weight: bold;
 }
 
-.links { 
+.links {
   display: flex;
   list-style: none;
   gap: 30px;
@@ -88,10 +87,28 @@ nav {
 
 .links li {
   list-style: none;
-  /* color: #ffe4f2; */
+  color: #ffe4f2;
 }
 
 .links li a {
   color: var(--color1);
   text-decoration: none;
+}
+
+.footer {
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.footer-link {
+  text-decoration: none;
+  cursor: pointer;
+  color: #9f45b0;
 }
