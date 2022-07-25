@@ -1,11 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webpack Setup Exercise</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Tv Shows / Movies App</title>
 </head>
+
 <body>
-    <h1>Hello webpack!</h1>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#homepage">
+                    <!--TV logo-->
+                    <i class="fa-solid fa-tv"></i>
+                    <p class="text-logo">Free Movies</p>
+                </a>
+            </div>
+            <ul class="links">
+                <li><a href="#homepage">Homepage</a></li>
+                <li><a href="#homepage">About Us</a></li>
+                <li><a href="#homepage">Downloads</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <form action="#" class="search-form">
+        <div class="search-box">
+            <input type="text" placeholder="Search..." class="search-input" />
+            <button type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+    </form>
+
+    <div class="title" id="homepage">
+        <h1>Tv Shows</h1>
+        <p class="secondary-text">All the best TV shows available here for you. Comment and like them!</p>
+        <p class="item-counter secondary-text"></p>
+    </div>
+
+    <div class="container">
+        <!--Created dynamically with javascript-->
+    </div>
+
+    <footer class="footer">
+        <p>
+            &copy; Created By
+            <a class="footer-link" href="https://www.linkedin.com/in/romina-patino/">Romina</a>
+            and
+            <a class="footer-link" href="https://www.linkedin.com/in/mumenya-nyamu-web-designer-data-enthusiast/">Mumenya Nyamu</a>
+            as part of Microverse Bootcamp curriculum
+        </p>
+    </footer>
 </body>
 </html>
