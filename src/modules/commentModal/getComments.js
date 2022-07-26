@@ -1,6 +1,6 @@
 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/yOdv0JXV8ssnN9f9thVW/comments';
 
-const getCount = (id) => comments.length;
+// const getCount = (id) => comments.length;
 
 const getComments = async (id) => {
   const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/yOdv0JXV8ssnN9f9thVW/comments?item_id=${id}`, {
