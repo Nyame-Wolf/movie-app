@@ -1,5 +1,6 @@
 import displayCard from './card.js';
 
+// CREATE ELEMENTS BASED ON INDEX.HTML
 class elementInfo {
   static renderCard = (title, imgUrl, itemID, summary) => {
     const cardContainer = document.querySelector('.grid-container');

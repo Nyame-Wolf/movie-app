@@ -1,5 +1,4 @@
 import Swal from 'sweetalert';
-// import displayCard from './card.js';
 
 function getModalContainer(imgURL, name, summary) {
   // https://sweetalert.js.org/guides/
