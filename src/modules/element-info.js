@@ -1,10 +1,15 @@
+import postComments from './commentModal/postComments.js';
+import getComments from './commentModal/getComments.js';
+// import modal from './commentModal/modal.js';
+
 // CREATE ELEMENTS BASED ON INDEX.HTML
 class elementInfo {
   static renderCard = (title, imgUrl, itemID) => {
     const cardContainer = document.querySelector('.grid-container');
     const card = document.createElement('div');
     card.classList.add('card');
-    card.setAttribute('data-id', itemID);
+    const id = itemID;
+    // card.setAttribute('data-id', itemID);
     // added a dataset use to create ids
 
     const imageContainer = document.createElement('div');
@@ -30,6 +35,7 @@ class elementInfo {
     const commentsButton = document.createElement('button');
     commentsButton.classList.add('comments-button');
     commentsButton.textContent = 'Comments';
+    // code starts
     commentsButton.addEventListener('click', () => {
       const modal = document.querySelector('.modal');
       const popup = document.createElement('div');
@@ -42,7 +48,28 @@ class elementInfo {
       const popupImg = image.cloneNode(true);
       popup.classList.add('popup-img');
 
-      popup.append(itemTitle.cloneNode(true), closeBtn, popupImg);
+      const comments = document.createElement('div');
+      getComments();
+      comments.textContent = 'Comments()';
+
+      const formDiv = document.createElement('div');
+      formDiv.classList.add('form-div');
+      const h3 = document.createElement('h3');
+      h3.textContent = 'Add a comment';
+
+      const form = document.createElement('form');
+      form.classList.add('comment-form');
+      const name = document.createElement('input');
+      const commentI = document.createElement('textarea');
+      const commentBtn = document.createElement('button');
+      commentBtn.textContent = 'Comment';
+      commentBtn.addEventListener('click', async () => {
+        await postComments(id, name.value, commentI.value);
+      });
+      form.append(name, commentI, commentBtn);
+      formDiv.append(h3, form);
+
+      popup.append(itemTitle.cloneNode(true), closeBtn, popupImg, comments, formDiv);
 
       modal.style.display = 'block';
       modal.appendChild(popup);
@@ -52,7 +79,7 @@ class elementInfo {
         modal.style.display = 'none';
       });
     });
-
+    // code ends
     cardContainer.append(card);
     card.append(imageContainer, itemInfo, commentsButton);
 
