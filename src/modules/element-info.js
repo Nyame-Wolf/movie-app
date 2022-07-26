@@ -1,8 +1,8 @@
-import displayCard from './card.js';
+// import displayCard from './card.js';
 
 // CREATE ELEMENTS BASED ON INDEX.HTML
 class elementInfo {
-  static renderCard = (title, imgUrl, itemID, summary) => {
+  static renderCard = (title, imgUrl) => {
     const cardContainer = document.querySelector('.grid-container');
     const card = document.createElement('div');
     card.classList.add('card');
@@ -31,7 +31,7 @@ class elementInfo {
     commentsButton.classList.add('comments-button');
     commentsButton.textContent = 'Comments';
     commentsButton.addEventListener('click', () => {
-      displayCard(imgUrl, title, itemID, summary);
+      // displayCard(imgUrl, title, itemID, summary);
     });
 
     cardContainer.append(card);

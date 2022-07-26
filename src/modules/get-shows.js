@@ -12,7 +12,6 @@ const getShows = async () => {
       elementInfo.renderCard(data.name, data.image.medium, data.id, data.summary);
     }
   });
-  elementInfo.itemCounter();
 };
 
 export default getShows;
