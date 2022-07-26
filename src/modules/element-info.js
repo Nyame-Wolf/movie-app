@@ -20,7 +20,7 @@ class elementInfo {
     image.src = imgUrl;
 
     const itemInfo = document.createElement('div');
-    itemInfo.classList.add('intem-info');
+    itemInfo.classList.add('item-info');
 
     const itemTitle = document.createElement('h2');
     itemTitle.classList.add('item-title');
@@ -62,14 +62,19 @@ class elementInfo {
       const name = document.createElement('input');
       const commentI = document.createElement('textarea');
       const commentBtn = document.createElement('button');
+      commentBtn.classList.add('comment-btn');
       commentBtn.textContent = 'Comment';
       commentBtn.addEventListener('click', async () => {
         await postComments(id, name.value, commentI.value);
       });
       form.append(name, commentI, commentBtn);
       formDiv.append(h3, form);
-
-      popup.append(itemTitle.cloneNode(true), closeBtn, popupImg, comments, formDiv);
+      const titleDiv = document.createElement('div');
+      titleDiv.classList.add('pop-up-title-div');
+      const popUpTitle = itemTitle.cloneNode(true);
+      popUpTitle.classList.add('pop-up-title');
+      titleDiv.append(popUpTitle, closeBtn);
+      popup.append(titleDiv, popupImg, comments, formDiv);
 
       modal.style.display = 'block';
       modal.appendChild(popup);
