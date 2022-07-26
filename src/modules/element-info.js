@@ -31,7 +31,26 @@ class elementInfo {
     commentsButton.classList.add('comments-button');
     commentsButton.textContent = 'Comments';
     commentsButton.addEventListener('click', () => {
-      // displayCard(imgUrl, title, itemID, summary);
+      const modal = document.querySelector('.modal');
+      const popup = document.createElement('div');
+      popup.classList.add('popup');
+
+      const closeBtn = document.createElement('button');
+      closeBtn.innerHTML = '&#x3A7';
+      closeBtn.classList.add('close-btn');
+
+      const popupImg = image.cloneNode(true);
+      popup.classList.add('popup-img');
+
+      popup.append(itemTitle.cloneNode(true), closeBtn, popupImg);
+
+      modal.style.display = 'block';
+      modal.appendChild(popup);
+
+      closeBtn.addEventListener('click', () => {
+        popup.remove();
+        modal.style.display = 'none';
+      });
     });
 
     cardContainer.append(card);
