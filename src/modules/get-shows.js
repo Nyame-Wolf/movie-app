@@ -18,7 +18,7 @@ const getShows = async () => {
   const response = await fetch(`${tvApi}/show`);
   const data = await response.json();
   // we can display more or less shows if we like
-  shows = data.slice(0, 99);
+  shows = data.slice(0, 999);
   return shows;
 };
 

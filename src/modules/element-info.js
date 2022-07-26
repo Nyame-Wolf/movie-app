@@ -1,11 +1,12 @@
 import postComments from './commentModal/postComments.js';
 import getComments from './commentModal/getComments.js';
-// import modal from './commentModal/modal.js';
+import { addLike, getTotalLikes } from '../likes.js';
 
 // CREATE ELEMENTS BASED ON INDEX.HTML
 class elementInfo {
   static renderCard = (title, imgUrl, itemID) => {
     const cardContainer = document.querySelector('.grid-container');
+    let likesCount = 0;
     const card = document.createElement('div');
     card.classList.add('card');
     const id = itemID;
@@ -85,12 +86,44 @@ class elementInfo {
       });
     });
     // code ends
+
+    // ADD LIKES - RECORDED ON THE Involvement API
+    heartIcon.addEventListener('click', (e) => {
+      addLike(itemID).then(() => {
+        const likes = e.target.nextElementSibling;
+        likes.textContent = '';
+        getTotalLikes(itemID).then((data) => {
+          likesCount = data;
+          likes.classList.add('likes-counter');
+          likes.textContent = likesCount;
+          likesContainer.append(likes);
+        });
+      });
+    });
+
     cardContainer.append(card);
     card.append(imageContainer, itemInfo, commentsButton);
 
     imageContainer.append(image);
     itemInfo.append(itemTitle, likesContainer);
     likesContainer.append(heartIcon);
+
+    // PRINT TOTAL LIKES - RECORDED ON THE Involvement API
+    getTotalLikes(itemID).then((data) => {
+      likesCount = data;
+      const likes = document.createElement('span');
+      likes.classList.add('likes-counter');
+      likes.textContent = '';
+      likes.textContent = likesCount;
+      likesContainer.append(likes);
+    });
+  };
+
+  static itemCounter = () => {
+    const cardContainer = document.querySelector('.grid-container');
+    const count = cardContainer.childElementCount;
+    const itemCounter = document.querySelector('.item-counter');
+    itemCounter.textContent = `Displaying ${count} shows:`;
   };
 }
 
