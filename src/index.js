@@ -1,13 +1,9 @@
-import _ from 'lodash';
+// import _ from 'lodash';
 import './style.css';
+import getShows from './modules/get-shows.js';
 
-function component() {
-  const element = document.createElement('div');
+// initialize
 
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Javascript Group Capstone']);
-
-  return element;
-}
-
-document.body.appendChild(component());
+document.addEventListener('DOMContentLoaded', () => {
+  getShows();
+});
