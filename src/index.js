@@ -1,7 +1,5 @@
 import './style.css';
-import getShows from './modules/get-shows.js';
+import populate from './modules/commentModal/populate.js';
 
 // initialize elements
-document.addEventListener('DOMContentLoaded', () => {
-  getShows();
-});
+document.addEventListener('DOMContentLoaded', populate);
