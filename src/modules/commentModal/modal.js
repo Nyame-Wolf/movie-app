@@ -1,45 +1,70 @@
-// const modal = () => {
-//   const modal = document.querySelector('.modal');
-//   const popup = document.createElement('div');
-//   popup.classList.add('popup');
+const modal = async (title, imgUrl) => {
+  const modal = document.querySelector('.modal');
+  const popup = document.createElement('div');
+  popup.classList.add('popup');
 
-//   const closeBtn = document.createElement('button');
-//   closeBtn.innerHTML = '&#x3A7';
-//   closeBtn.classList.add('close-btn');
+  const popupImg = document.createElement('img');
+  popupImg.classList.add('item-image');
+  popupImg.src = imgUrl;
 
-//   const popupImg = image.cloneNode(true);
-//   popup.classList.add('popup-img');
+  const itemInfo = document.createElement('div');
+  itemInfo.classList.add('item-info');
 
-//   const comments = document.createElement('div');
-//   getComments();
-//   comments.textContent = 'Comments()';
+  const popUpTitle = document.createElement('h2');
+  popUpTitle.classList.add('item-title');
+  popUpTitle.innerText = title;
 
-//   const formDiv = document.createElement('div');
-//   formDiv.classList.add('form-div');
-//   const h3 = document.createElement('h3');
-//   h3.textContent = 'Add a comment';
+  const closeBtn = document.createElement('button');
+  closeBtn.innerHTML = '&#x3A7';
+  closeBtn.classList.add('close-btn');
 
-//   const form = document.createElement('form');
-//   form.classList.add('comment-form');
-//   const name = document.createElement('input');
-//   const commentI = document.createElement('textarea');
-//   const commentBtn = document.createElement('button');
-//   commentBtn.textContent = 'Comment';
-//   commentBtn.addEventListener('click', async () => {
-//     await postComments(id, name.value, commentI.value);
-//   });
-//   form.append(name, commentI, commentBtn);
-//   formDiv.append(h3, form);
+  popup.classList.add('popup-img');
 
-//   popup.append(itemTitle.cloneNode(true), closeBtn, popupImg, comments, formDiv);
+  const comments = document.createElement('div');
 
-//   modal.style.display = 'block';
-//   modal.appendChild(popup);
+  const commentTable = document.createElement('table');
+  commentTable.classList.add('comments');
+  const tableRow = document.createElement('tr');
+  const dateHeader = document.createElement('th');
+  dateHeader.textContent = 'Created on';
+  const nameHeader = document.createElement('th');
+  nameHeader.textContent = 'Created by';
+  const commentHeader = document.createElement('th');
+  commentHeader.textContent = 'Comment';
+  tableRow.append(dateHeader, nameHeader, commentHeader);
 
-//   closeBtn.addEventListener('click', () => {
-//     popup.remove();
-//     modal.style.display = 'none';
-//   });
-// };
+  const tableBody = document.createElement('tbody');
+  tableBody.classList.add('tbody');
+  commentTable.append(tableRow, tableBody);
 
-// export default modal;
+  const formDiv = document.createElement('div');
+  formDiv.classList.add('form-div');
+  const h3 = document.createElement('h3');
+  h3.textContent = 'Add a comment';
+
+  const form = document.createElement('form');
+  form.classList.add('comment-form');
+  const name = document.createElement('input');
+  const commentI = document.createElement('textarea');
+  const commentBtn = document.createElement('button');
+  commentBtn.classList.add('comment-btn');
+  commentBtn.textContent = 'Comment';
+  form.append(name, commentI, commentBtn);
+
+  formDiv.append(h3, form);
+  const titleDiv = document.createElement('div');
+  titleDiv.classList.add('pop-up-title-div');
+  popUpTitle.classList.add('pop-up-title');
+  titleDiv.append(popUpTitle, closeBtn);
+  popup.append(titleDiv, popupImg, comments, commentTable, formDiv);
+
+  modal.style.display = 'block';
+  modal.appendChild(popup);
+
+  closeBtn.addEventListener('click', () => {
+    popup.remove();
+    modal.style.display = 'none';
+  });
+};
+
+export default modal;
