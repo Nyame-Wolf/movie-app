@@ -88,19 +88,31 @@ class elementInfo {
     // code ends
 
     // ADD LIKES - RECORDED ON THE Involvement API
-    heartIcon.addEventListener('click', (e) => {
-      addLike(itemID).then(() => {
-        const likes = e.target.nextElementSibling;
-        likes.textContent = '';
-        getTotalLikes(itemID).then((data) => {
-          likesCount = data;
-          likes.classList.add('likes-counter');
-          likes.textContent = likesCount;
-          likesContainer.append(likes);
-        });
-      });
+    heartIcon.addEventListener('click', async (e) => {
+      // addLike(itemID).then(() => {
+      //   const likes = ;
+      //   likes.textContent = '';
+      //   getTotalLikes(itemID).then((data) => {
+      //     likesCount = data;
+      //     likes.classList.add('likes-counter');
+      //     likes.textContent = likesCount;
+      //     likesContainer.append(likes);
+      //   });
+      // });
+      // e.preventDefault();
+      // const likesCount = async () => {
+        // const c = await getTotalLikes(itemID);
+        // if (c.length) {
+          // likesContainer.textContent = `Likes(${c.length})`;
+        // createComments(c);
+        // } else {
+          // likesContainer.textContent = 'Likes (0)';
     });
+      // };
+    //   likesCount();
+    // });
 
+    // append elements to the card container
     cardContainer.append(card);
     card.append(imageContainer, itemInfo, commentsButton);
 
@@ -119,6 +131,7 @@ class elementInfo {
     });
   };
 
+  // set an item counter
   static itemCounter = () => {
     const cardContainer = document.querySelector('.grid-container');
     const count = cardContainer.childElementCount;
