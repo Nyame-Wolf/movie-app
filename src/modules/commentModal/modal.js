@@ -1,4 +1,8 @@
-const modal = async (title, imgUrl) => {
+import postComments from './postComments.js';
+import getComments from './getComments.js';
+import createComments from './commentPopulate.js';
+
+const modal = async (title, imgUrl, itemID) => {
   const modal = document.querySelector('.modal');
   const popup = document.createElement('div');
   popup.classList.add('popup');
@@ -37,6 +41,16 @@ const modal = async (title, imgUrl) => {
   tableBody.classList.add('tbody');
   commentTable.append(tableRow, tableBody);
 
+  const updateComments = async () => {
+    const c = await getComments(itemID);
+    if (c.length) {
+      comments.textContent = `Comments(${c.length})`;
+      createComments(c);
+    } else {
+      comments.textContent = 'Comments(0)';
+    }
+  };
+  updateComments();
   const formDiv = document.createElement('div');
   formDiv.classList.add('form-div');
   const h3 = document.createElement('h3');
@@ -50,6 +64,13 @@ const modal = async (title, imgUrl) => {
   commentBtn.classList.add('comment-btn');
   commentBtn.textContent = 'Comment';
   form.append(name, commentI, commentBtn);
+
+  commentBtn.addEventListener('click', async (e) => {
+    e.preventDefault();
+    await postComments(itemID, name.value, commentI.value, new Date());
+    updateComments();
+    form.reset();
+  });
 
   formDiv.append(h3, form);
   const titleDiv = document.createElement('div');
