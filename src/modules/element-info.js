@@ -1,16 +1,15 @@
 import postComments from './commentModal/postComments.js';
 import getComments from './commentModal/getComments.js';
-import { addLike, getTotalLikes } from '../likes.js';
+import addLike from './likes/postLikes.js';
 
 // CREATE ELEMENTS BASED ON INDEX.HTML
 class elementInfo {
   static renderCard = (title, imgUrl, itemID) => {
     const cardContainer = document.querySelector('.grid-container');
+    // let likesCount = 0;
     const card = document.createElement('div');
     card.classList.add('card');
     const id = itemID;
-    // card.setAttribute('data-id', itemID);
-    // added a dataset use to create ids
 
     const imageContainer = document.createElement('div');
     imageContainer.classList.add('image-container');
@@ -101,10 +100,12 @@ class elementInfo {
     likesContainer.append(heartIcon);
 
     // PRINT TOTAL LIKES - RECORDED ON THE Involvement API
-    const getLikes = async () => {
-      await getTotalLikes();
-    };
-    console.log(getLikes());
+
+    // likesCount = data;
+    // const likes = document.createElement('span');
+    // likes.classList.add('likes-counter');
+    // likes.innerHTML = `Likes: ${data}`;
+    // likesContainer.append(likes);
 
     // set an item counter
     // static itemCounter = () => {
