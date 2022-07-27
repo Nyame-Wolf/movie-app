@@ -14,6 +14,11 @@ const createComment = (data) => {
 };
 const createComments = (comments) => {
   const commentT = document.querySelector('.tbody');
+  let child = commentT.lastElementChild;
+  while (child) {
+    commentT.removeChild(child);
+    child = commentT.lastElementChild;
+  }
   comments.forEach((comment) => {
     const aComment = createComment(comment);
     commentT.appendChild(aComment);
