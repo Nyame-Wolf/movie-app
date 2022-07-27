@@ -1,7 +1,6 @@
 import postComments from './commentModal/postComments.js';
 import getComments from './commentModal/getComments.js';
 import addLike from './likes/postLikes.js';
-import getTotalLikes from './likes/getLikes.js';
 
 // CREATE ELEMENTS BASED ON INDEX.HTML
 class elementInfo {

@@ -252,7 +252,6 @@ nav {
 /* MODAL SECTION */
 
 .modal {
-  position: fixed;
   z-index: 1;
   padding-left: 350px;
   bottom: 0;
