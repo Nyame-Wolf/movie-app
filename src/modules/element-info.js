@@ -6,7 +6,6 @@ import { addLike, getTotalLikes } from '../likes.js';
 class elementInfo {
   static renderCard = (title, imgUrl, itemID) => {
     const cardContainer = document.querySelector('.grid-container');
-    let likesCount = 0;
     const card = document.createElement('div');
     card.classList.add('card');
     const id = itemID;
@@ -89,28 +88,9 @@ class elementInfo {
 
     // ADD LIKES - RECORDED ON THE Involvement API
     heartIcon.addEventListener('click', async (e) => {
-      // addLike(itemID).then(() => {
-      //   const likes = ;
-      //   likes.textContent = '';
-      //   getTotalLikes(itemID).then((data) => {
-      //     likesCount = data;
-      //     likes.classList.add('likes-counter');
-      //     likes.textContent = likesCount;
-      //     likesContainer.append(likes);
-      //   });
-      // });
-      // e.preventDefault();
-      // const likesCount = async () => {
-        // const c = await getTotalLikes(itemID);
-        // if (c.length) {
-          // likesContainer.textContent = `Likes(${c.length})`;
-        // createComments(c);
-        // } else {
-          // likesContainer.textContent = 'Likes (0)';
+      e.preventDefault();
+      await addLike(itemID);
     });
-      // };
-    //   likesCount();
-    // });
 
     // append elements to the card container
     cardContainer.append(card);
@@ -121,22 +101,18 @@ class elementInfo {
     likesContainer.append(heartIcon);
 
     // PRINT TOTAL LIKES - RECORDED ON THE Involvement API
-    getTotalLikes(itemID).then((data) => {
-      likesCount = data;
-      const likes = document.createElement('span');
-      likes.classList.add('likes-counter');
-      likes.textContent = '';
-      likes.textContent = likesCount;
-      likesContainer.append(likes);
-    });
-  };
+    const getLikes = async () => {
+      await getTotalLikes();
+    };
+    console.log(getLikes());
 
-  // set an item counter
-  static itemCounter = () => {
-    const cardContainer = document.querySelector('.grid-container');
-    const count = cardContainer.childElementCount;
-    const itemCounter = document.querySelector('.item-counter');
-    itemCounter.textContent = `Displaying ${count} shows:`;
+    // set an item counter
+    // static itemCounter = () => {
+    //   const cardContainer = document.querySelector('.grid-container');
+    //   const count = cardContainer.childElementCount;
+    //   const itemCounter = document.querySelector('.item-counter');
+    //   itemCounter.textContent = `Displaying ${count} shows:`;
+    // };
   };
 }
 
