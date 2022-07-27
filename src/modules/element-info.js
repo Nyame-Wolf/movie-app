@@ -31,7 +31,7 @@ class elementInfo {
 
     const likesNumber = like.likes;
     likesContainer.textContent = likesNumber;
-    console.log(likesNumber);
+    // console.log(likesNumber);
 
     const heartIcon = document.createElement('i');
     heartIcon.classList.add('fa-solid', 'fa-heart');
@@ -106,7 +106,6 @@ class elementInfo {
 
     // PRINT TOTAL LIKES - RECORDED ON THE Involvement API
 
-
     // const getLikes = async () => {
     //   const likes = await getTotalLikes();
     //   // eslint-disable-next-line no-plusplus
@@ -116,7 +115,7 @@ class elementInfo {
     //       return likesCounter;
     //     }
     //   };
-    //   return 
+    //   return
     // };
     // getLikes();
 
@@ -124,7 +123,6 @@ class elementInfo {
     // likes.classList.add('likes-counter');
     // likes.innerHTML = `Likes: ${likes}`;
     // likesContainer.append(printLikes);
-
 
     // set an item counter
     // static itemCounter = () => {
