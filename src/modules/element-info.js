@@ -27,7 +27,7 @@ class elementInfo {
     likesContainer.classList.add('likes-container');
     console.log(like);
 
-    const likesNumber = like.likes;
+    const likesNumber = like;
     likesContainer.textContent = likesNumber;
     // console.log(likesNumber);
 
