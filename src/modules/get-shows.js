@@ -13,7 +13,7 @@ export const renderShows = () => {
 
 // GET SHOWS FROM API https://www.tvmaze.com/api/shows
 const getShows = async () => {
-  if (shows.length) {
+  if (shows.length > 0) {
     return shows;
   }
   const response = await fetch(`${tvApi}/show`);

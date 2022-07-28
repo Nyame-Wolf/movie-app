@@ -25,11 +25,13 @@ class elementInfo {
 
     const likesContainer = document.createElement('div');
     likesContainer.classList.add('likes-container');
-    console.log(like);
+    const likesNumber = document.createElement('span');
+    likesNumber.textContent = like;
 
-    const likesNumber = like;
-    likesContainer.textContent = likesNumber;
-    // console.log(likesNumber);
+    const updateLikes = () => {
+      const currentLikes = likesNumber.innerText;
+      likesNumber.innerText = currentLikes ? Number(currentLikes) + 1 : 1;
+    };
 
     const heartIcon = document.createElement('i');
     heartIcon.classList.add('fa-solid', 'fa-heart');
@@ -45,6 +47,8 @@ class elementInfo {
     heartIcon.addEventListener('click', async (e) => {
       e.preventDefault();
       await addLike(itemID);
+      updateLikes();
+      // itemInfo.appendChild(likesContainer);
     });
 
     // append elements to the card container
@@ -53,7 +57,7 @@ class elementInfo {
 
     imageContainer.append(image);
     itemInfo.append(itemTitle, likesContainer);
-    likesContainer.append(heartIcon);
+    likesContainer.append(heartIcon, likesNumber);
 
     // PRINT TOTAL LIKES - RECORDED ON THE Involvement API
 

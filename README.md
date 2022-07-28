@@ -12,7 +12,7 @@
 - Webpack
 - Kanban board.
 
-## Live Demo 
+## Live Demo
 
 [Live Demo Link]()
 
@@ -32,9 +32,9 @@ To get a local copy up and running follow these simple example steps.
 ### Setup
 
 - Clone this repo ~$ git clone
-     - http : https://github.com/Nyame-Wolf/movie-app.git
-     - ssh :git@github.com:Nyame-Wolf/movie-app.git
-- cd movie-app
+  - http : https://github.com/Nyame-Wolf/movie-app.git
+  - ssh :git@github.com:Nyame-Wolf/movie-app.git
+- Change directory to movie app ~$ cd movie-app
 
 ### Install
 
@@ -52,7 +52,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Deployment
 
-- Github pages. Click on [live]()  for a live demo.
+- Github pages. Click on [live]() for a live demo.
 
 ## Authors
 
@@ -80,7 +80,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- [TV/maze](https://api.tvmaze.com)  API
+- [TV/maze](https://api.tvmaze.com) API
 - Microverse [involvement](https://www.notion.so/Involvement-API-869e60b5ad104603aa6db59e08150270) API
 - etc
 
