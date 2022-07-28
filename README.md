@@ -51,7 +51,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Deployment
 
-- Github pages. Click on [live]() for a live demo.
+- Github pages. Click on [live](https://nyame-wolf.github.io/movie-app/dist/) for a live demo.
 
 ## Authors
 
