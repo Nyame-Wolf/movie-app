@@ -21,7 +21,7 @@ const getShows = async () => {
   const data = await response.json();
 
   // we can display more or less shows if we like
-  shows = data.slice(0, 100);
+  shows = data.slice(0, 240);
   const likes = (await getTotalLikes()).reduce((likesById, like) => {
     likesById[like.item_id] = like;
     return likesById;
