@@ -9,8 +9,12 @@ const getComments = async (id) => {
       Accept: 'application/json',
     },
   });
+  if (response.status === 200) {
+    return response.json();
+  }
   const jsonResponse = await response.json();
-  return jsonResponse;
+
+  return Promise.reject(jsonResponse);
 };
 
 export default getComments;
