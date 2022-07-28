@@ -36,5 +36,15 @@
     "axios": "^0.27.2",
     "lodash": "^4.17.21",
     "sweetalert": "^2.1.2"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/modules/test/setup.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/_mocks_/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/_mocks_/styleMock.js"
   }
+}
 }
