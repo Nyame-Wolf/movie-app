@@ -6,6 +6,7 @@ const tableData = (d) => {
 
 const createComment = (data) => {
   const dataRow = document.createElement('tr');
+  dataRow.classList.add('comments-count');
   const dateD = tableData(`${data.creation_date}`);
   const user = tableData(`${data.username}`);
   const comment = tableData(`${data.comment}`);
