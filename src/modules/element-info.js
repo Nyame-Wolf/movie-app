@@ -12,7 +12,6 @@ class elementInfo {
     const cardContainer = document.querySelector('.grid-container');
     const card = document.createElement('div');
     card.classList.add('card');
-    // const id = itemID;
 
     const imageContainer = document.createElement('div');
     imageContainer.classList.add('image-container');

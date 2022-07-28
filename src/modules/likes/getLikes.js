@@ -6,7 +6,6 @@ const getTotalLikes = async () => {
     },
   });
   const data = await response.json();
-  // const results = data.find((item) => +item.item_id === +id);
   return data;
 };
 

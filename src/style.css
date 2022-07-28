@@ -44,6 +44,10 @@ nav {
   justify-content: space-around;
 }
 
+a {
+  text-decoration: none;
+}
+
 .search-form {
   margin: auto;
   margin-top: 50px;
@@ -295,12 +299,18 @@ nav {
   font-weight: bolder;
 }
 
+.img-summary {
+  display: flex;
+  gap: 3em;
+  justify-content: center;
+  margin-top: 1em;
+}
+
 .popup-img {
   max-width: 100%;
   height: auto;
   border-radius: 15px;
   padding-top: unset;
-  align-self: center;
 }
 
 .form-div {
@@ -340,7 +350,7 @@ h3 {
 
 .pop-up-title {
   padding-top: 40px;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 th {
@@ -358,10 +368,10 @@ td {
 }
 
 .summary p {
+  text-align: center;
   padding-top: 30px;
-  padding-bottom: 30px;
   line-height: 1.5em;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .pop-up-comments {
@@ -378,4 +388,8 @@ td {
 .item-counter {
   color: aqua;
   font-size: 40px;
+}
+
+.comments-count {
+  font-size: 0.7rem;
 }

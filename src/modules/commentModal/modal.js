@@ -8,13 +8,17 @@ const modal = async (title, imgUrl, itemID, summary) => {
   const popup = document.createElement('div');
   popup.classList.add('popup');
 
+  const imgSummary = document.createElement('div');
+  imgSummary.classList.add('img-summary');
   const popupImg = document.createElement('img');
   popupImg.classList.add('popup-img');
   popupImg.src = imgUrl;
 
   const itemSummary = document.createElement('div');
+
   itemSummary.classList.add('summary');
   itemSummary.innerHTML = summary;
+  imgSummary.append(popupImg, itemSummary);
 
   const itemInfo = document.createElement('div');
   itemInfo.classList.add('item-info');
@@ -49,7 +53,6 @@ const modal = async (title, imgUrl, itemID, summary) => {
     const c = await getComments(itemID).catch(() => []);
     if (c.length) {
       createComments(c);
-      // comments.textContent = getCommentsCount();
       const commentCount = getCommentsCount();
       comments.textContent = `Comments (${commentCount})`;
     } else {
@@ -83,9 +86,8 @@ const modal = async (title, imgUrl, itemID, summary) => {
   titleDiv.classList.add('pop-up-title-div');
   popUpTitle.classList.add('pop-up-title');
   titleDiv.append(popUpTitle, closeBtn);
-  popup.append(titleDiv, popupImg, itemSummary, comments, commentTable, formDiv);
+  popup.append(titleDiv, imgSummary, comments, commentTable, formDiv);
 
-  //   modal.style.display = 'block';
   modal.style.display = 'flex';
   modal.appendChild(popup);
 
