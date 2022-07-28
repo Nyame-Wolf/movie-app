@@ -27,6 +27,7 @@ const modal = async (title, imgUrl, itemID, summary) => {
   closeBtn.classList.add('close-btn');
 
   const comments = document.createElement('div');
+  comments.classList.add('pop-up-comments');
 
   const commentTable = document.createElement('table');
   commentTable.classList.add('comments');

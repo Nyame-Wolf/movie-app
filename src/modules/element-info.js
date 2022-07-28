@@ -3,6 +3,11 @@ import addLike from './likes/postLikes.js';
 
 // CREATE ELEMENTS BASED ON INDEX.HTML
 class elementInfo {
+  static showCount = (shows) => {
+    const showsNumber = document.querySelector('.item-counter');
+    showsNumber.innerText = shows.length;
+  }
+
   static renderCard = (title, imgUrl, itemID, summary, like) => {
     const cardContainer = document.querySelector('.grid-container');
     const card = document.createElement('div');
@@ -28,6 +33,7 @@ class elementInfo {
     const likesNumber = document.createElement('span');
     likesNumber.textContent = like;
 
+    // PRINT TOTAL LIKES - RECORDED ON THE Involvement API
     const updateLikes = () => {
       const currentLikes = likesNumber.innerText;
       likesNumber.innerText = currentLikes ? Number(currentLikes) + 1 : 1;
@@ -48,7 +54,6 @@ class elementInfo {
       e.preventDefault();
       await addLike(itemID);
       updateLikes();
-      // itemInfo.appendChild(likesContainer);
     });
 
     // append elements to the card container
@@ -58,33 +63,6 @@ class elementInfo {
     imageContainer.append(image);
     itemInfo.append(itemTitle, likesContainer);
     likesContainer.append(heartIcon, likesNumber);
-
-    // PRINT TOTAL LIKES - RECORDED ON THE Involvement API
-
-    // const getLikes = async () => {
-    //   const likes = await getTotalLikes();
-    //   // eslint-disable-next-line no-plusplus
-    //   for (let i = 0; i < likes.length; i++) {
-    //     const likesCounter = likes[i].likes;
-    //     if (likes[i].item_id === itemID) {
-    //       return likesCounter;
-    //     }
-    //   };
-    //   return
-    // };
-    // getLikes();
-
-    // const printLikes = document.createElement('span');
-    // likes.classList.add('likes-counter');
-    // likes.innerHTML = `Likes: ${likes}`;
-    // likesContainer.append(printLikes);
-
-    // set an item counter
-    // static itemCounter = () => {
-    //   const cardContainer = document.querySelector('.grid-container');
-    //   const count = cardContainer.childElementCount;
-    //   const itemCounter = document.querySelector('.item-counter');
-    //   itemCounter.textContent = `Displaying ${count} shows:`;
   };
 }
 export default elementInfo;
