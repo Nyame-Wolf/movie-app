@@ -23,13 +23,13 @@ const getShows = async () => {
 
   // we can display more or less shows if we like
   shows = data.slice(0, 99);
-  const likes = (await getTotalLikes()).reduce((acc, like) => {
-    acc[like.item_id] = like;
-    return acc;
+  const likes = (await getTotalLikes()).reduce((likesById, like) => {
+    likesById[like.item_id] = like;
+    return likesById;
   }, {});
   console.log(likes);
   shows = shows.map((show) => {
-    show.likes = likes[show.id];
+    show.likes = likes[show.id] || {};
     return show;
   });
   return shows;
