@@ -1,16 +1,17 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# movie app
+# MovieFlix App 
 
-> Description the project.
-
+**In this project [@rominana](https://github.com/rominana) and [@Nyame-Wolf](https://github.com/Nyame-Wolf), created a movie app to rate and comment your favorite movies, as part of the Module2 Vanilla Javascript Capstone project.**
+**It uses the [tvmaze Api](https://api.tvmaze.com) to list shows. It has a comment popup which displays the show summary, image, number of comments and the comments, as well as a form to add more comments. It also displays the number of shows displayed, as well as the number of likes a show has received. The comment popup and the likes use the [involvement api](https://www.notion.so/Involvement-API-869e60b5ad104603aa6db59e08150270) provided by Microverse.**
 ## Built With
 
 - HTML
 - CSS
 - Javascript
 - Webpack
-- Kanban board.
+- Jest for testing
+- Kanban board
 
 ## Live Demo
 
@@ -18,16 +19,13 @@
 
 ## Getting Started
 
-**This is,** [@rominana](https://github.com/rominana) and [@Nyame-Wolf](https://github.com/Nyame-Wolf), Module2 Vanilla Javascript Capstone project.
-**It uses the [tvmaze Api](https://api.tvmaze.com) to list shows. It has a comment popup which displays the show summary,image,number of comments and the comments also as well as a form to add comments. It also displays the number of shows displayed, as well as the number of likes a show has received. The comment popup and the likes use the [involvement api](https://www.notion.so/Involvement-API-869e60b5ad104603aa6db59e08150270) provided by microverse.**
-
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
 - vscode or any ide
-- terminal
-- node
+- Terminal
+- Node
 
 ### Setup
 
@@ -56,13 +54,13 @@ To get a local copy up and running follow these simple example steps.
 
 ## Authors
 
-👤 **Author1**
+👤 **Romina Patiño**
 
 - GitHub: [@rominana](https://github.com/rominana)
 - Twitter: [@rominana_pipi](https://twitter.com/rominana_pipi)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/romina-patino/)
 
-👤 **Author2**
+👤 **Mumenya Nyamu**
 
 - GitHub: [@Nyame-Wolf](https://github.com/Nyame-Wolf)
 - Twitter: [@mumenyam](https://twitter.com/mumenyam)
@@ -71,7 +69,6 @@ To get a local copy up and running follow these simple example steps.
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
-
 Feel free to check the [issues page](../../issues/).
 
 ## Show your support
@@ -80,10 +77,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- [TV/maze](https://api.tvmaze.com) API
-- Microverse [involvement](https://www.notion.so/Involvement-API-869e60b5ad104603aa6db59e08150270) API
-- etc
-
+- [TV/maze](https://api.tvmaze.com) API.
+- Microverse [involvement](https://www.notion.so/Involvement-API-869e60b5ad104603aa6db59e08150270) API.
 ## 📝 License
 
 This project is [MIT](./MIT.md) licensed.
