@@ -1,6 +1,7 @@
 import postComments from './postComments.js';
 import getComments from './getComments.js';
 import createComments from './commentPopulate.js';
+import getCommentsCount from './comments-count.js';
 
 const modal = async (title, imgUrl, itemID, summary) => {
   const modal = document.querySelector('.modal');
@@ -47,10 +48,12 @@ const modal = async (title, imgUrl, itemID, summary) => {
   const updateComments = async () => {
     const c = await getComments(itemID).catch(() => []);
     if (c.length) {
-      comments.textContent = `Comments(${c.length})`;
       createComments(c);
+      // comments.textContent = getCommentsCount();
+      const commentCount = getCommentsCount();
+      comments.textContent = `Comments (${commentCount})`;
     } else {
-      comments.textContent = 'Comments(0)';
+      comments.textContent = 'Comments (0)';
     }
   };
   updateComments();

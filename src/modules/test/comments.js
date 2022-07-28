@@ -1,0 +1,4 @@
+const commentsT = `<table class="comments"><tr><th>Created on</th><th>Created by</th><th>Comment</th></tr><tbody class="tbody"><tr class="comments-count"><td>2022-07-27</td><td>Romina</td><td>Awesome movie wow. Just wow</td></tr><tr class="comments-count"><td>2022-07-27</td><td>Mumenya</td><td>Killer moves</td></tr><tr class="comments-count"><td>2022-07-27</td><td>Patino</td><td>Really got to me</td></tr><tr class="comments-count"><td>2022-07-27</td><td>Vitor</td><td>You should wathc this. Its so awesome
+</td></tr><tr class="comments-count"><td>2022-07-28</td><td>Ruth</td><td>cool movie</td></tr><tr class="comments-count"><td>2022-07-28</td><td>Nyaguthii</td><td>Wow...i have enjoyed this</td></tr><tr class="comments-count"><td>2022-07-28</td><td>Angela</td><td>See this movie man</td></tr></tbody></table>`;
+
+export default commentsT;
