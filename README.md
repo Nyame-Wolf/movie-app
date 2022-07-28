@@ -18,7 +18,7 @@
 
 ## Getting Started
 
-**This is.** [@rominana](https://github.com/rominana) and [@githubhandle](https://github.com/Nyame-Wolf) Module2 Vanilla Javascript Capstone project.
+**This is.** [@rominana](https://github.com/rominana) and [@Nyame-Wolf](https://github.com/Nyame-Wolf) Module2 Vanilla Javascript Capstone project.
 **It uses the [tvmaze Api](https://api.tvmaze.com) to list shows. It has a comment popup which displays the show summary,image,number of comments and the comments also as well as a form to add comments. It also displays the number of shows displayed, as well as the number of likes a show has received. The comment popup and the likes use the [involvement api](https://www.notion.so/Involvement-API-869e60b5ad104603aa6db59e08150270) provided by microverse.**
 
 To get a local copy up and running follow these simple example steps.
@@ -32,7 +32,7 @@ To get a local copy up and running follow these simple example steps.
 ### Setup
 
 - Clone this repo ~$ git clone
-  [ssh] (git@github.com:Nyame-Wolf/movie-app.git)
+  [ssh](git@github.com:Nyame-Wolf/movie-app.git)
   [http](https://github.com/Nyame-Wolf/movie-app.git)
 - cd movie-app
 
