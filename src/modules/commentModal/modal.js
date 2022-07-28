@@ -49,9 +49,11 @@ const modal = async (title, imgUrl, itemID, summary) => {
     const c = await getComments(itemID).catch(() => []);
     if (c.length) {
       createComments(c);
-      comments.textContent = getCommentsCount();
+      // comments.textContent = getCommentsCount();
+      const commentCount = getCommentsCount();
+      comments.textContent = `Comments (${commentCount})`;
     } else {
-      comments.textContent = 'Comments(0)';
+      comments.textContent = 'Comments (0)';
     }
   };
   updateComments();
