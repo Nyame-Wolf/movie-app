@@ -38,7 +38,7 @@ class elementInfo {
     commentsButton.classList.add('comments-button');
     commentsButton.textContent = 'Comments';
     // code starts
-    commentsButton.addEventListener('click', () => modal(title, imgUrl, itemID));
+    commentsButton.addEventListener('click', () => modal(title, imgUrl, itemID, summary));
     // code ends
 
     // ADD LIKES - RECORDED ON THE Involvement API

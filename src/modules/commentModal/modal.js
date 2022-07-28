@@ -2,7 +2,7 @@ import postComments from './postComments.js';
 import getComments from './getComments.js';
 import createComments from './commentPopulate.js';
 
-const modal = async (title, imgUrl, itemID) => {
+const modal = async (title, imgUrl, itemID, summary) => {
   const modal = document.querySelector('.modal');
   const popup = document.createElement('div');
   popup.classList.add('popup');
@@ -10,6 +10,10 @@ const modal = async (title, imgUrl, itemID) => {
   const popupImg = document.createElement('img');
   popupImg.classList.add('popup-img');
   popupImg.src = imgUrl;
+
+  const itemSummary = document.createElement('div');
+  itemSummary.classList.add('summary');
+  itemSummary.innerHTML = summary;
 
   const itemInfo = document.createElement('div');
   itemInfo.classList.add('item-info');
@@ -75,7 +79,7 @@ const modal = async (title, imgUrl, itemID) => {
   titleDiv.classList.add('pop-up-title-div');
   popUpTitle.classList.add('pop-up-title');
   titleDiv.append(popUpTitle, closeBtn);
-  popup.append(titleDiv, popupImg, comments, commentTable, formDiv);
+  popup.append(titleDiv, popupImg, itemSummary, comments, commentTable, formDiv);
 
   //   modal.style.display = 'block';
   modal.style.display = 'flex';
