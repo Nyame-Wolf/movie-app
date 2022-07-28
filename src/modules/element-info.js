@@ -1,5 +1,4 @@
-import postComments from './commentModal/postComments.js';
-import getComments from './commentModal/getComments.js';
+import modal from './commentModal/modal.js';
 import addLike from './likes/postLikes.js';
 
 // CREATE ELEMENTS BASED ON INDEX.HTML
@@ -8,7 +7,7 @@ class elementInfo {
     const cardContainer = document.querySelector('.grid-container');
     const card = document.createElement('div');
     card.classList.add('card');
-    const id = itemID;
+    // const id = itemID;
 
     const imageContainer = document.createElement('div');
     imageContainer.classList.add('image-container');
@@ -26,11 +25,13 @@ class elementInfo {
 
     const likesContainer = document.createElement('div');
     likesContainer.classList.add('likes-container');
-    console.log(like);
+    const likesNumber = document.createElement('span');
+    likesNumber.textContent = like;
 
-    const likesNumber = like.likes;
-    likesContainer.textContent = likesNumber;
-    // console.log(likesNumber);
+    const updateLikes = () => {
+      const currentLikes = likesNumber.innerText;
+      likesNumber.innerText = currentLikes ? Number(currentLikes) + 1 : 1;
+    };
 
     const heartIcon = document.createElement('i');
     heartIcon.classList.add('fa-solid', 'fa-heart');
@@ -39,60 +40,15 @@ class elementInfo {
     commentsButton.classList.add('comments-button');
     commentsButton.textContent = 'Comments';
     // code starts
-    commentsButton.addEventListener('click', () => {
-      const modal = document.querySelector('.modal');
-      const popup = document.createElement('div');
-      popup.classList.add('popup');
-
-      const closeBtn = document.createElement('button');
-      closeBtn.innerHTML = '&#x3A7';
-      closeBtn.classList.add('close-btn');
-
-      const popupImg = image.cloneNode(true);
-      popup.classList.add('popup-img');
-
-      const comments = document.createElement('div');
-      getComments();
-      comments.textContent = 'Comments()';
-
-      const formDiv = document.createElement('div');
-      formDiv.classList.add('form-div');
-      const h3 = document.createElement('h3');
-      h3.textContent = 'Add a comment';
-
-      const form = document.createElement('form');
-      form.classList.add('comment-form');
-      const name = document.createElement('input');
-      const commentI = document.createElement('textarea');
-      const commentBtn = document.createElement('button');
-      commentBtn.classList.add('comment-btn');
-      commentBtn.textContent = 'Comment';
-      commentBtn.addEventListener('click', async () => {
-        await postComments(id, name.value, commentI.value);
-      });
-      form.append(name, commentI, commentBtn);
-      formDiv.append(h3, form);
-      const titleDiv = document.createElement('div');
-      titleDiv.classList.add('pop-up-title-div');
-      const popUpTitle = itemTitle.cloneNode(true);
-      popUpTitle.classList.add('pop-up-title');
-      titleDiv.append(popUpTitle, closeBtn);
-      popup.append(titleDiv, popupImg, comments, formDiv);
-
-      modal.style.display = 'block';
-      modal.appendChild(popup);
-
-      closeBtn.addEventListener('click', () => {
-        popup.remove();
-        modal.style.display = 'none';
-      });
-    });
+    commentsButton.addEventListener('click', () => modal(title, imgUrl, itemID, summary));
     // code ends
 
     // ADD LIKES - RECORDED ON THE Involvement API
     heartIcon.addEventListener('click', async (e) => {
       e.preventDefault();
       await addLike(itemID);
+      updateLikes();
+      // itemInfo.appendChild(likesContainer);
     });
 
     // append elements to the card container
@@ -101,7 +57,7 @@ class elementInfo {
 
     imageContainer.append(image);
     itemInfo.append(itemTitle, likesContainer);
-    likesContainer.append(heartIcon);
+    likesContainer.append(heartIcon, likesNumber);
 
     // PRINT TOTAL LIKES - RECORDED ON THE Involvement API
 

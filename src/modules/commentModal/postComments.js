@@ -1,5 +1,10 @@
+import { baseUrl, appId } from '../api.js';
+
 const postComments = async (id, username, comment, creationDate) => {
-  const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/yOdv0JXV8ssnN9f9thVW/comments', {
+  console.log({
+    id, username, comment, creationDate,
+  });
+  const response = await fetch(`${baseUrl}/${appId}/comments`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -11,7 +16,7 @@ const postComments = async (id, username, comment, creationDate) => {
       creation_date: creationDate,
     }),
   });
-  const jsonResponse = await response.json();
+  const jsonResponse = await response.text();
   return jsonResponse;
 };
 export default postComments;

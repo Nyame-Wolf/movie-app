@@ -251,7 +251,7 @@ nav {
 
 /* MODAL SECTION */
 
-.modal {
+/* .modal {
   z-index: 1;
   padding-left: 350px;
   bottom: 0;
@@ -267,13 +267,38 @@ nav {
 }
 
 .popup {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   padding: 0 1.5em 1.5em 1.5em;
   gap: 1em;
   background: var(--color3);
   margin: 10%;
-  overflow: hidden;
+} */
+.modal {
+  position: fixed;
+  z-index: 1;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 1em;
+  padding: 1em;
+  border: 1px solid #ebecf0;
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.popup {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
 }
 
 .pop-up-title-div {
@@ -285,7 +310,7 @@ nav {
 .close-btn {
   border: none;
   font-size: 2rem;
-  background-color: #00076f;
+  background-color: rgba(0, 0, 0, 0.8);
   color: var(--color1);
   padding-top: 35px;
 }
@@ -297,7 +322,9 @@ nav {
 }
 
 .popup-img {
-  width: 50%;
+  width: 20%;
+  height: 20%;
+  max-height: 250px;
   border-radius: 15px;
   padding-top: unset;
 }
@@ -312,15 +339,8 @@ nav {
 .comment-form {
   display: flex;
   flex-direction: column;
-  width: 60%;
   align-items: center;
   gap: 10px;
-}
-
-.comment-form input,
-.comment-form textarea {
-  width: 80%;
-  height: 20%;
 }
 
 .comment-btn {
@@ -345,4 +365,18 @@ h3 {
 
 .pop-up-title {
   padding-top: 40px;
+}
+
+th {
+  color: #9f45b0;
+}
+
+tbody {
+  height: 100px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+td {
+  text-align: center;
 }

@@ -1,16 +1,20 @@
-'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/yOdv0JXV8ssnN9f9thVW/comments';
+import { baseUrl, appId } from '../api.js';
 
 // const getCount = (id) => comments.length;
 
 const getComments = async (id) => {
-  const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/yOdv0JXV8ssnN9f9thVW/comments?item_id=${id}`, {
+  const response = await fetch(`${baseUrl}/${appId}/comments?item_id=${id}`, {
     method: 'GET',
     headers: {
       Accept: 'application/json',
     },
   });
+  if (response.status === 200) {
+    return response.json();
+  }
   const jsonResponse = await response.json();
-  return jsonResponse;
+
+  return Promise.reject(jsonResponse);
 };
 
 export default getComments;

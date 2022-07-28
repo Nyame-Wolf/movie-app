@@ -9,7 +9,7 @@ const addLike = async (id) => {
       item_id: id,
     }),
   });
-  const jsonResponse = await response.json();
+  const jsonResponse = await response.text();
   return jsonResponse;
 };
 
