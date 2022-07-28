@@ -8,7 +8,7 @@ const modal = async (title, imgUrl, itemID) => {
   popup.classList.add('popup');
 
   const popupImg = document.createElement('img');
-  popupImg.classList.add('item-image');
+  popupImg.classList.add('popup-img');
   popupImg.src = imgUrl;
 
   const itemInfo = document.createElement('div');
@@ -21,8 +21,6 @@ const modal = async (title, imgUrl, itemID) => {
   const closeBtn = document.createElement('button');
   closeBtn.innerHTML = '&#x3A7';
   closeBtn.classList.add('close-btn');
-
-  popup.classList.add('popup-img');
 
   const comments = document.createElement('div');
 
@@ -42,7 +40,7 @@ const modal = async (title, imgUrl, itemID) => {
   commentTable.append(tableRow, tableBody);
 
   const updateComments = async () => {
-    const c = await getComments(itemID);
+    const c = await getComments(itemID).catch(() => []);
     if (c.length) {
       comments.textContent = `Comments(${c.length})`;
       createComments(c);
@@ -79,7 +77,8 @@ const modal = async (title, imgUrl, itemID) => {
   titleDiv.append(popUpTitle, closeBtn);
   popup.append(titleDiv, popupImg, comments, commentTable, formDiv);
 
-  modal.style.display = 'block';
+  //   modal.style.display = 'block';
+  modal.style.display = 'flex';
   modal.appendChild(popup);
 
   closeBtn.addEventListener('click', () => {
