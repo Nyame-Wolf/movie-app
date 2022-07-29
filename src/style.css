@@ -278,8 +278,8 @@ a {
 
 .pop-up-title-div {
   display: flex;
-  justify-items: center;
   justify-content: space-between;
+  width: 80%;
 }
 
 .close-btn {
@@ -395,5 +395,18 @@ td {
 .div-comments-container {
   display: flex;
   justify-content: space-between;
+  width: 80%;
   gap: 30px;
+}
+
+table,
+td,
+th {
+  border: 1px solid;
+}
+
+table {
+  border-collapse: collapse;
+  width: 50%;
+  margin: 1em;
 }

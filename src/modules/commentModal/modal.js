@@ -90,7 +90,7 @@ const modal = async (title, imgUrl, itemID, summary) => {
   titleDiv.classList.add('pop-up-title-div');
   popUpTitle.classList.add('pop-up-title');
   titleDiv.append(popUpTitle, closeBtn);
-  commentsContainer.append(commentTable, formDiv);
+  commentsContainer.append(formDiv, commentTable);
   popup.append(titleDiv, imgSummary, comments, commentsContainer);
 
   modal.style.display = 'flex';
