@@ -180,6 +180,7 @@ a {
   object-fit: contain;
   display: flex;
   align-items: center;
+  margin: 0 auto;
 }
 
 .item-info {
