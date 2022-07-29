@@ -72,7 +72,11 @@ const modal = async (title, imgUrl, itemID, summary) => {
   const form = document.createElement('form');
   form.classList.add('comment-form');
   const name = document.createElement('input');
+  name.setAttribute('required', '')
+  name.setAttribute('placeholder', 'Enter name here')
   const commentI = document.createElement('textarea');
+  commentI.setAttribute('required', '')
+  commentI.setAttribute('placeholder', 'Enter comment here')
   const commentBtn = document.createElement('button');
   commentBtn.classList.add('comment-btn');
   commentBtn.textContent = 'Comment';

@@ -252,18 +252,12 @@ a {
   position: fixed;
   z-index: 1;
   display: none;
-  flex-direction: column;
-  align-self: center;
   top: 0;
-  left: 0;
-  right: 0;
   margin: 6em;
   padding: 2em;
   border: 1px solid #ebecf0;
   border-radius: 25px;
   background-color: rgba(0, 0, 0, 0.9);
-  width: 90%;
-  height: 85%;
   text-align: center;
 }
 
@@ -322,7 +316,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  width: 60%;
+  padding: 1em;
 }
 
 .comment-btn {
@@ -365,7 +359,6 @@ td {
 }
 
 .summary p {
-  text-align: center;
   padding-top: 1rem;
   line-height: 1.5em;
   font-size: 0.8rem;
