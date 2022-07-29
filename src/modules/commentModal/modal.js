@@ -48,7 +48,6 @@ const modal = async (title, imgUrl, itemID, summary) => {
   commentHeader.textContent = 'Comment';
   tableRow.append(dateHeader, nameHeader, commentHeader);
 
-
   const tableBody = document.createElement('tbody');
   tableBody.classList.add('tbody');
   commentTable.append(tableRow, tableBody);
@@ -67,16 +66,16 @@ const modal = async (title, imgUrl, itemID, summary) => {
   const formDiv = document.createElement('div');
   formDiv.classList.add('form-div');
   const h3 = document.createElement('h3');
-  h3.textContent = 'Add a comment';
+  h3.textContent = 'Leave a comment';
 
   const form = document.createElement('form');
   form.classList.add('comment-form');
   const name = document.createElement('input');
-  name.setAttribute('required', '')
-  name.setAttribute('placeholder', 'Enter name here')
+  name.setAttribute('required', '');
+  name.setAttribute('placeholder', 'Enter name here');
   const commentI = document.createElement('textarea');
-  commentI.setAttribute('required', '')
-  commentI.setAttribute('placeholder', 'Enter comment here')
+  commentI.setAttribute('required', '');
+  commentI.setAttribute('placeholder', 'Enter comment here');
   const commentBtn = document.createElement('button');
   commentBtn.classList.add('comment-btn');
   commentBtn.textContent = 'Comment';

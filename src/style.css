@@ -8,8 +8,18 @@ body {
   text-decoration: none;
   background: url(./assets/background.jpg);
   color: #f5f5f5;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
 }
 
 :root {
@@ -182,7 +192,7 @@ a {
   justify-content: center;
   padding-top: 85px;
   gap: 20px;
-  font-family: arial;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .likes-container {
@@ -249,6 +259,7 @@ a {
 /* MODAL SECTION */
 
 .modal {
+  -webkit-backdrop-filter: blur(5px);
   position: fixed;
   z-index: 1;
   display: none;
@@ -259,13 +270,12 @@ a {
   border-radius: 25px;
   background-color: rgba(0, 0, 0, 0.9);
   text-align: center;
+  backdrop-filter: blur(5px);
 }
 
 .popup {
   display: flex;
   flex-direction: column;
-  /* width: 90%;
-    padding: 1rem; */
   height: 100%;
   align-items: center;
 }
@@ -344,10 +354,6 @@ h3 {
   font-size: 30px;
 }
 
-th {
-  /* font-size: 0.8rem; */
-}
-
 tbody {
   height: 100px;
   overflow-y: auto;
@@ -365,7 +371,6 @@ td {
 }
 
 .pop-up-comments {
-  /* padding-bottom: 25px; */
   font-size: 20px;
   font-weight: bold;
   color: #1ecbd7;
@@ -392,14 +397,8 @@ td {
   gap: 30px;
 }
 
-table,
-td,
-th {
-  border: 1px solid;
-}
-
 table {
-  border-collapse: collapse;
-  width: 50%;
+  width: 40%;
   margin: 1em;
+  max-height: 30px;
 }
