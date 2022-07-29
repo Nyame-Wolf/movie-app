@@ -34,16 +34,20 @@ const modal = async (title, imgUrl, itemID, summary) => {
   const comments = document.createElement('div');
   comments.classList.add('pop-up-comments');
 
+  const commentsContainer = document.createElement('div');
+  commentsContainer.classList.add('div-comments-container');
+
   const commentTable = document.createElement('table');
   commentTable.classList.add('comments');
   const tableRow = document.createElement('tr');
   const dateHeader = document.createElement('th');
-  dateHeader.textContent = 'Created on';
+  dateHeader.textContent = 'Date';
   const nameHeader = document.createElement('th');
   nameHeader.textContent = 'Created by';
   const commentHeader = document.createElement('th');
   commentHeader.textContent = 'Comment';
   tableRow.append(dateHeader, nameHeader, commentHeader);
+
 
   const tableBody = document.createElement('tbody');
   tableBody.classList.add('tbody');
@@ -86,7 +90,8 @@ const modal = async (title, imgUrl, itemID, summary) => {
   titleDiv.classList.add('pop-up-title-div');
   popUpTitle.classList.add('pop-up-title');
   titleDiv.append(popUpTitle, closeBtn);
-  popup.append(titleDiv, imgSummary, comments, commentTable, formDiv);
+  commentsContainer.append(commentTable, formDiv);
+  popup.append(titleDiv, imgSummary, comments, commentsContainer);
 
   modal.style.display = 'flex';
   modal.appendChild(popup);
