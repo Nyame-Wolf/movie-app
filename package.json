@@ -34,11 +34,6 @@
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.1"
   },
-  "dependencies": {
-    "axios": "^0.27.2",
-    "lodash": "^4.17.21",
-    "sweetalert": "^2.1.2"
-  },
   "jest": {
     "testEnvironment": "jsdom",
     "setupFilesAfterEnv": [
