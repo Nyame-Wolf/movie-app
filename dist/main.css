@@ -1,3 +1,6 @@
+/*!*****************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/style.css ***!
+  \*****************************************************************/
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +9,7 @@
 
 body {
   text-decoration: none;
-  background: url(./assets/background.jpg);
+  background: url(6045ee913940155a80a1.jpg);
   color: #f5f5f5;
   font-family:
     system-ui,
@@ -402,3 +405,4 @@ table {
   margin: 1em;
   max-height: 30px;
 }
+

@@ -51,8 +51,8 @@ class elementInfo {
     // ADD LIKES - RECORDED ON THE Involvement API
     heartIcon.addEventListener('click', async (e) => {
       e.preventDefault();
-      await addLike(itemID);
       updateLikes();
+      await addLike(itemID);
     });
 
     // append elements to the card container
